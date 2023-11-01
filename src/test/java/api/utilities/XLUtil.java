@@ -15,7 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XLUtil 
-//decalre global variables of all class req. for parameterization
+//decalre global referance variables of all class req. for parameterization
 { 
    String path;
  public  FileInputStream filein;
@@ -31,10 +31,10 @@ public class XLUtil
 	{
 	this.path=path;
     }
-//get no of rows from given excel sheet
+
  
  public int getrowcount(String sheetname) throws IOException
- {
+ {//get no of rows from given excel sheet
 	 filein=new FileInputStream(path);
 	 wrkbook=new XSSFWorkbook(filein);
 	 sheet=wrkbook.getSheet(sheetname);
@@ -45,7 +45,7 @@ public class XLUtil
  }
  
  
- // to get colum no from excelsheet
+ // to get no of columns from excelsheet
  
  public int getcellcount(String sheetname, int rownum) throws IOException
  {

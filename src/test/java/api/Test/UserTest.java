@@ -1,13 +1,13 @@
 package api.Test;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
+
 import api.EndPoints.UserEndPoints;
 import api.Payload.User;
 import io.restassured.response.Response;
@@ -16,12 +16,14 @@ public class UserTest
 {
 	Faker faker;
 	User payload;
-	
+	public Logger log;
     @BeforeClass
 	public void SetUp()
-	{ 
+	{ //data is created using faker class
     	faker=new Faker();
     	payload=new User();
+    	
+    	log=LogManager.getLogger(this.getClass());//got creating logs of test execution
     	
     	payload.setId(faker.idNumber().hashCode());
     	payload.setUsername(faker.name().username());
@@ -34,7 +36,7 @@ public class UserTest
 	}
     @Test(priority = 1)
    public void Test_postUser()
-    {
+    {  log.debug("**** creating user ***");
     	//createing new user by passing data into respone body using POJO class
     	//here User is a pojo class which contains getters and setters to to assign and 
     	//retrive the data into variables
@@ -44,18 +46,18 @@ public class UserTest
     	Assert.assertEquals(response.getStatusCode(), 200);
     	Assert.assertEquals(response.header("content-type"),"application/json");
     	
-    	
+    	log.debug("**** user created ***");
     }
     @Test(priority = 2)
     public void GetUser_test()
     {
-    	
+    	log.debug("**** reading user data ***");
     Response response=UserEndPoints.GetUser(this.payload.getUsername());
     	
     response.then().log().all();
     Assert.assertEquals(response.getStatusCode(), 200);
     Assert.assertEquals(response.header("server"), "Jetty(9.2.9.v20150224)");
-    	
+    log.debug("**** user data sussesfully fetched ***");
     }
     
     @Test(priority = 3)
@@ -63,6 +65,7 @@ public class UserTest
     {//while updating user we need to pass payload in response body = the uniqueid or username fo the user
     //we want to update
     //log().all()-->will get all the logs into console inclusing headers ,cookies,reponse body,statuscode 
+    	 log.debug("**** updating user ***");
     	payload.setFirstName(faker.name().firstName());
     	payload.setLastName(faker.name().lastName());
     	payload.setEmail(faker.internet().safeEmailAddress());
@@ -75,18 +78,21 @@ public class UserTest
          responseAfterupdate.then().log().all();
          Assert.assertEquals(responseAfterupdate.getStatusCode(), 200);
          Assert.assertEquals(response.header("server"), "Jetty(9.2.9.v20150224)");
-    	
+         log.debug("**** user updated ***");
+
     }
     @Test(priority = 4)
     public void DeleteUser_test()
     {
+    	log.debug("**** deleting user ***");
 
     Response response=UserEndPoints.DeleteUser(this.payload.getUsername());
     	
     response.then().log().all();
     Assert.assertEquals(response.getStatusCode(), 200);
     Assert.assertEquals(response.header("server"), "Jetty(9.2.9.v20150224)");
-    	
+    log.debug("**** user deleted ***");
+
     }
     
 }
