@@ -4,16 +4,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 
 import api.EndPoints.UserEndPoints;
 import api.Payload.User;
+import api.utilities.ExtentReporteManager;
 import io.restassured.response.Response;
-
+@Listeners(ExtentReporteManager.class)
 public class UserTest 
-{
+{// this test accepts the urls from Routes.java class
 	Faker faker;
 	User payload;
 	public Logger log;
@@ -55,13 +57,12 @@ public class UserTest
     Response response=UserEndPoints.GetUser(this.payload.getUsername());
     	
     response.then().log().all();
-    Assert.assertEquals(response.getStatusCode(), 200);
+    Assert.assertEquals(response.getStatusCode(), 204);
     Assert.assertEquals(response.header("server"), "Jetty(9.2.9.v20150224)");
     log.debug("**** user data sussesfully fetched ***");
     }
     
-    @Test(priority = 3)
-    public void UpdateUser_test()
+    @Test(priority = 3)    public void UpdateUser_test()
     {//while updating user we need to pass payload in response body = the uniqueid or username fo the user
     //we want to update
     //log().all()-->will get all the logs into console inclusing headers ,cookies,reponse body,statuscode 
