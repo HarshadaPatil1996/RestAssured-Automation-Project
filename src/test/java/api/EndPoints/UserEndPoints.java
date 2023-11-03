@@ -6,7 +6,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 public class UserEndPoints 
 {
-	
+	//all methods are public static
 	public static Response createUser(User payload)
 	{//create new user save the response in a variable and return the response
 		Response response = given()

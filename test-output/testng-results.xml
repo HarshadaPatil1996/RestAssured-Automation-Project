@@ -2,33 +2,98 @@
 <testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-02T15:23:10 IST" name="Default suite" finished-at="2023-11-02T15:23:23 IST" duration-ms="12439">
+  <suite started-at="2023-11-03T13:15:15 IST" name="Default suite" finished-at="2023-11-03T13:15:29 IST" duration-ms="13885">
     <groups>
     </groups>
-    <test started-at="2023-11-02T15:23:10 IST" name="Default test" finished-at="2023-11-02T15:23:23 IST" duration-ms="12439">
-      <class name="api.Test.UserTest2">
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:api.Test.UserTest2@3f191845]" started-at="2023-11-02T15:23:11 IST" name="SetUp" finished-at="2023-11-02T15:23:12 IST" duration-ms="1482" status="PASS">
+    <test started-at="2023-11-03T13:15:15 IST" name="Default test" finished-at="2023-11-03T13:15:29 IST" duration-ms="13885">
+      <class name="api.Test.StoreTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:api.Test.StoreTest@2cb4893b]" started-at="2023-11-03T13:15:16 IST" name="setup" finished-at="2023-11-03T13:15:16 IST" duration-ms="81" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="Test_postUser()[pri:1, instance:api.Test.UserTest2@3f191845]" started-at="2023-11-02T15:23:12 IST" name="Test_postUser" finished-at="2023-11-02T15:23:17 IST" duration-ms="4957" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="CreateOrder_test()[pri:1, instance:api.Test.StoreTest@2cb4893b]" started-at="2023-11-03T13:15:16 IST" name="CreateOrder_test" finished-at="2023-11-03T13:15:21 IST" duration-ms="5374" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test_postUser -->
-        <test-method signature="GetUser_test()[pri:2, instance:api.Test.UserTest2@3f191845]" started-at="2023-11-02T15:23:17 IST" name="GetUser_test" finished-at="2023-11-02T15:23:19 IST" duration-ms="1245" status="FAIL">
+        </test-method> <!-- CreateOrder_test -->
+        <test-method signature="GetOrder_test()[pri:2, instance:api.Test.StoreTest@2cb4893b]" started-at="2023-11-03T13:15:21 IST" name="GetOrder_test" finished-at="2023-11-03T13:15:24 IST" duration-ms="2540" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetOrder_test -->
+        <test-method signature="validateschema_test()[pri:3, instance:api.Test.StoreTest@2cb4893b]" started-at="2023-11-03T13:15:24 IST" name="validateschema_test" finished-at="2023-11-03T13:15:27 IST" duration-ms="3898" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [204] but found [200]]]>
+              <![CDATA[1 expectation failed.
+Response body doesn't match expectation.
+Expected: The content to match the given JSON schema.
+error: instance type (integer) does not match any allowed primitive type (allowed: ["string"])
+    level: "error"
+    schema: {"loadingURI":"file:/C:/Users/Sairam/eclipse-workspace/PetStoreAPIautomation/target/test-classes/.%5CScemafile%5CstorePostschema.json#","pointer":"/definitions/Welcome8/properties/petId"}
+    instance: {"pointer":"/petId"}
+    domain: "validation"
+    keyword: "type"
+    found: "integer"
+    expected: ["string"]
+warning: format attribute "boolean" not supported
+    level: "warning"
+    schema: {"loadingURI":"file:/C:/Users/Sairam/eclipse-workspace/PetStoreAPIautomation/target/test-classes/.%5CScemafile%5CstorePostschema.json#","pointer":"/definitions/Welcome8/properties/status"}
+    domain: "validation"
+    keyword: "format"
+    attribute: "boolean"
+
+  Actual: {"id":5,"petId":1930903395,"quantity":25,"shipDate":"2023-11-03T05:42:06.082+0000","status":"true","complete":false}
+]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [204] but found [200]
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.failNotEquals(Assert.java:1413)
-at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-at org.testng.Assert.assertEquals(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:1240)
-at org.testng.Assert.assertEquals(Assert.java:1274)
-at api.Test.UserTest2.GetUser_test(UserTest2.java:61)
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Response body doesn't match expectation.
+Expected: The content to match the given JSON schema.
+error: instance type (integer) does not match any allowed primitive type (allowed: ["string"])
+    level: "error"
+    schema: {"loadingURI":"file:/C:/Users/Sairam/eclipse-workspace/PetStoreAPIautomation/target/test-classes/.%5CScemafile%5CstorePostschema.json#","pointer":"/definitions/Welcome8/properties/petId"}
+    instance: {"pointer":"/petId"}
+    domain: "validation"
+    keyword: "type"
+    found: "integer"
+    expected: ["string"]
+warning: format attribute "boolean" not supported
+    level: "warning"
+    schema: {"loadingURI":"file:/C:/Users/Sairam/eclipse-workspace/PetStoreAPIautomation/target/test-classes/.%5CScemafile%5CstorePostschema.json#","pointer":"/definitions/Welcome8/properties/status"}
+    domain: "validation"
+    keyword: "format"
+    attribute: "boolean"
+
+  Actual: {"id":5,"petId":1930903395,"quantity":25,"shipDate":"2023-11-03T05:42:06.082+0000","status":"true","complete":false}
+
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:107)
+at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+at api.Test.StoreTest.validateschema_test(StoreTest.java:65)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -62,16 +127,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GetUser_test -->
-        <test-method signature="UpdateUser_test()[pri:3, instance:api.Test.UserTest2@3f191845]" started-at="2023-11-02T15:23:19 IST" name="UpdateUser_test" finished-at="2023-11-02T15:23:21 IST" duration-ms="2610" status="PASS">
+        </test-method> <!-- validateschema_test -->
+        <test-method signature="DeleteOrder_test()[pri:4, instance:api.Test.StoreTest@2cb4893b]" started-at="2023-11-03T13:15:27 IST" name="DeleteOrder_test" finished-at="2023-11-03T13:15:29 IST" duration-ms="1363" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- UpdateUser_test -->
-        <test-method signature="DeleteUser_test()[pri:4, instance:api.Test.UserTest2@3f191845]" started-at="2023-11-02T15:23:21 IST" name="DeleteUser_test" finished-at="2023-11-02T15:23:23 IST" duration-ms="1368" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeleteUser_test -->
-      </class> <!-- api.Test.UserTest2 -->
+        </test-method> <!-- DeleteOrder_test -->
+      </class> <!-- api.Test.StoreTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
