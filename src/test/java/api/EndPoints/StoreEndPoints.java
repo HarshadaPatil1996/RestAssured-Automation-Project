@@ -28,7 +28,7 @@ public class StoreEndPoints
 		return response;
 	}
 	
-	public static Response GetOrderInfoBy_OrderID(int id)
+	public static Response GetOrderInfoBy_OrderID(String id)
 	{//no authorization needed
 		Response response= given()
 		.contentType(ContentType.JSON)
@@ -38,7 +38,7 @@ public class StoreEndPoints
 		return response;
 	}
 	
-	public static Response UpdateOrderBy_OrderID(Store payload,int  id)
+	public static Response UpdateOrderBy_OrderID(Store payload,String  id)
 	{//no authorization needed
 		Response response= given()
 		.contentType(ContentType.JSON)
@@ -49,7 +49,7 @@ public class StoreEndPoints
 		return response;
 	}
 	
-	public static Response DeleteOrderBy_OrderID(int id)
+	public static Response DeleteOrderBy_OrderID(String id)
 	{//no authorization needed
 		Response response= given()
 		.contentType(ContentType.JSON)

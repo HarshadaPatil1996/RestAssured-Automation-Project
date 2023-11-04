@@ -5,7 +5,9 @@
     <classes>
       <class name="api.Test.StoreTest">
         <methods>
+          <include name="GetOrder_test"/>
           <include name="validateschema_test"/>
+          <include name="DeleteOrder_test"/>
           <include name="setup"/>
         </methods>
       </class> <!-- api.Test.StoreTest -->

@@ -10,7 +10,7 @@ import api.Payload.User;
 import api.utilities.DataProviders;
 import io.restassured.response.Response;
 
-public class DataDrivenTest 
+public class DataDriven_userTest
 {//in the annotaions, we need to provide priority, data provider name, data provider class name
 //class name is only nessesary if the dataprovider class is in diff. package form test class
 	@Test(priority = 1,dataProvider = "alldata", dataProviderClass = DataProviders.class)

@@ -27,9 +27,9 @@ public class StoreTest
 	{
 		fk=new Faker();
 		payload=new Store();	
-		payload.setId(5);
-		payload.setPetId(fk.idNumber().hashCode());
-		payload.setQuantity(25);
+		payload.setId(fk.number().digits(1));
+		payload.setPetId(fk.number().digits(1));
+		payload.setQuantity(fk.number().digits(2));
 		payload.setShipDate("2023-11-03T05:42:06.082+0000");
 		payload.setStatus("true");
 		payload.setComplete("true");
@@ -48,7 +48,7 @@ public class StoreTest
 	public void GetOrder_test()
 	{
 		
-		Response res 	=StoreEndPoints.GetOrderInfoBy_OrderID(5);
+		Response res 	=StoreEndPoints.GetOrderInfoBy_OrderID(this.payload.getId());
 		res.then().log().body();
 		Assert.assertEquals(res.getStatusCode(), 200);
     	Assert.assertEquals(res.header("content-type"),"application/json");
@@ -60,7 +60,7 @@ public class StoreTest
 	public void validateschema_test()
 	{
 		
-		Response res 	=StoreEndPoints.GetOrderInfoBy_OrderID(5);
+		Response res 	=StoreEndPoints.GetOrderInfoBy_OrderID(this.payload.getId());
 		Assert.assertEquals(res.getStatusCode(), 200);
     	res.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath(".\\Scemafile\\storePostschema.json"));
 		
@@ -70,7 +70,7 @@ public class StoreTest
 	public void DeleteOrder_test()
 	{
 
-		Response res 	=StoreEndPoints.GetOrderInfoBy_OrderID(5);
+		Response res 	=StoreEndPoints.GetOrderInfoBy_OrderID(this.payload.getId());
 		Assert.assertEquals(res.getStatusCode(), 200);
     	Assert.assertEquals(res.header("content-type"),"application/json");
 	}
