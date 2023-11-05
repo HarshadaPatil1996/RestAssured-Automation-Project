@@ -19,7 +19,8 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 @Listeners(ExtentReporteManager.class)
 public class StoreTest 
-{    String number=RandomStringUtils.random(1);
+{    
+	String number=RandomStringUtils.random(1);
 	Store payload;
 	Faker fk;
     @BeforeClass

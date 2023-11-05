@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-04T18:46:24 IST" name="Default suite" finished-at="2023-11-04T18:46:35 IST" duration-ms="10876">
+  <suite started-at="2023-11-05T15:39:30 IST" name="Default suite" finished-at="2023-11-05T15:39:41 IST" duration-ms="10038">
     <groups>
     </groups>
-    <test started-at="2023-11-04T18:46:24 IST" name="Default test" finished-at="2023-11-04T18:46:35 IST" duration-ms="10876">
-      <class name="api.Test.StoreTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:api.Test.StoreTest@2cb4893b]" started-at="2023-11-04T18:46:24 IST" name="setup" finished-at="2023-11-04T18:46:24 IST" duration-ms="90" status="PASS">
+    <test started-at="2023-11-05T15:39:30 IST" name="Default test" finished-at="2023-11-05T15:39:41 IST" duration-ms="10038">
+      <class name="api.Test.PetTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:api.Test.PetTest@8519cb4]" started-at="2023-11-05T15:39:31 IST" name="setup" finished-at="2023-11-05T15:39:31 IST" duration-ms="366" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CreateOrder_test()[pri:1, instance:api.Test.StoreTest@2cb4893b]" started-at="2023-11-04T18:46:24 IST" name="CreateOrder_test" finished-at="2023-11-04T18:46:29 IST" duration-ms="4650" status="PASS">
+        <test-method signature="createNewPET_test()[pri:1, instance:api.Test.PetTest@8519cb4]" started-at="2023-11-05T15:39:31 IST" name="createNewPET_test" finished-at="2023-11-05T15:39:37 IST" duration-ms="5966" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateOrder_test -->
-        <test-method signature="GetOrder_test()[pri:2, instance:api.Test.StoreTest@2cb4893b]" started-at="2023-11-04T18:46:29 IST" name="GetOrder_test" finished-at="2023-11-04T18:46:32 IST" duration-ms="2551" status="PASS">
+        </test-method> <!-- createNewPET_test -->
+        <test-method signature="GetinfoPET_test()[pri:2, instance:api.Test.PetTest@8519cb4]" started-at="2023-11-05T15:39:37 IST" name="GetinfoPET_test" finished-at="2023-11-05T15:39:39 IST" duration-ms="1713" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GetOrder_test -->
-        <test-method signature="validateschema_test()[pri:3, instance:api.Test.StoreTest@2cb4893b]" started-at="2023-11-04T18:46:32 IST" name="validateschema_test" finished-at="2023-11-04T18:46:33 IST" duration-ms="1671" status="PASS">
+        </test-method> <!-- GetinfoPET_test -->
+        <test-method signature="deletePetingo_test()[pri:3, instance:api.Test.PetTest@8519cb4]" started-at="2023-11-05T15:39:39 IST" name="deletePetingo_test" finished-at="2023-11-05T15:39:41 IST" duration-ms="1900" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateschema_test -->
-        <test-method signature="DeleteOrder_test()[pri:4, instance:api.Test.StoreTest@2cb4893b]" started-at="2023-11-04T18:46:33 IST" name="DeleteOrder_test" finished-at="2023-11-04T18:46:35 IST" duration-ms="1306" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeleteOrder_test -->
-      </class> <!-- api.Test.StoreTest -->
+        </test-method> <!-- deletePetingo_test -->
+      </class> <!-- api.Test.PetTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
