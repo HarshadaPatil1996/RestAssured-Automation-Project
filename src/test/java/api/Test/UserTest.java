@@ -57,7 +57,7 @@ public class UserTest
     Response response=UserEndPoints.GetUser(this.payload.getUsername());
     	
     response.then().log().all();
-    Assert.assertEquals(response.getStatusCode(), 204);
+    Assert.assertEquals(response.getStatusCode(), 200);
     Assert.assertEquals(response.header("server"), "Jetty(9.2.9.v20150224)");
     log.debug("**** user data sussesfully fetched ***");
     }

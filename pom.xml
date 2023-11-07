@@ -12,7 +12,8 @@
         <version>3.2.1</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>testng.xml</suiteXmlFile>
+          
+            <suiteXmlFile>testngALL_MODULES.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
        </plugin>

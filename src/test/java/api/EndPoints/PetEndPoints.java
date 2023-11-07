@@ -30,6 +30,18 @@ public class PetEndPoints
     }
     
 
+	public static Response upadtepetinfobyid(String data,String id)
+    { String puturl= geturl().getString("Put_url_pet");
+    	Response res = given()
+    	.contentType(ContentType.JSON)
+    	.accept(ContentType.JSON)
+    	.pathParam("id", id)
+    	.when()
+    	.put(puturl);
+		return res;
+    	
+    }
+
 	public static Response getpetinfobyid(String id)
     { String geturl= geturl().getString("Get_url_pet");
     	Response res = given()
@@ -42,6 +54,7 @@ public class PetEndPoints
     	
     }
 	
+
 
 	public static Response deletepetbyid(String id)
     { String deleteurl= geturl().getString("Delete_url_pet");

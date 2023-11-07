@@ -59,7 +59,7 @@ public class PetTest
 		Assert.assertEquals(res.statusCode(), 200);
 	
    }
-   
+  
    @Test(priority = 3)
    public void deletePetingo_test()
    {
